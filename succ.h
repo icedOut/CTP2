@@ -1,24 +1,37 @@
-/*  INF3105 - Structures de données et algorithmes       *
- *  UQAM / Département d'informatique                    *
- *  Automne 2018 / TP2                                   *
- *  Auteur(s):                                           *
- *                                                       *
- *                                                       */
 #if !defined(__SUCC_H__)
 #define __SUCC_H__
-#include <string>
+#include "date.h"
 #include "arbreavl.h"
 #include "arbremap.h"
-#include "date.h"
+#include "pointst.h"
+#include <iostream>
 
-using namespace std;
+
+class PointST;
 
 class Succursale{
   public:
-    // À compléter...
- 
+
+    Succursale();
+    Succursale(std::string nom, PointST p, int nbVoiture, int nbPlacesLibres);
+
+    /********GETTERS********/
+    bool verifier(Date debut, Date fin);
+    bool verifierDeuxSuccursales(Date debut, Date fin, bool origine);
+    void enregistrer(std::string origine, Date debut, std::string destination, Date fin);
+    std::string getNom() const;
+    double distanceSucc(const PointST&) const;
+    void afficherSuccursaleDetails() const;
+    void afficherReservations();
+
+
   private:
-    // À compléter...
+    std::string nom;
+    PointST p;
+    int nbVoiture;
+    int nbPlacesLibres;
+    ArbreMap<Date, int[2]> reservations;
+
 };
 
 #endif

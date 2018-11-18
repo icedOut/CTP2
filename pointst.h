@@ -20,6 +20,7 @@ class PointST {
     PointST(double latitude_, double longitude_); // angles en radians
     PointST(const PointST&);
 
+
   private:
     double latitude;  // angle en radians
     double longitude; // angle en radians
@@ -27,11 +28,11 @@ class PointST {
   // Les opérateurs << et >> écrit et lit du texte en degrés et fait la conversion en radians.
   friend std::ostream& operator << (std::ostream&, const PointST&);
   friend std::istream& operator >> (std::istream&, PointST&);
-  
+
   friend double distance(const PointST&, const PointST&);
 };
 
-//double distance(const PointST&, const PointST&);
+//    double distance(const PointST&, const PointST&);
 
 #endif
 

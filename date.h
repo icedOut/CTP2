@@ -10,13 +10,19 @@
 class Date{
   public:
     Date();
-    
+
+    int getJours() const;
     bool operator <(const Date& date) const;
     bool operator <=(const Date& date) const;
-  
+
   private:
-    
-    
+    int dateNb;
+    int jours;
+    int heures;
+    int minutes;
+
+    int changerDateEnNb(int jours, int heures, int minutes) const;
+
   friend std::ostream& operator << (std::ostream&, const Date& date);
   friend std::istream& operator >> (std::istream&, Date& date);
 };

@@ -21,7 +21,7 @@ PointST::PointST(const PointST& point)
 }
 
 // Angles en radians.
-PointST::PointST(double latitude_, double longitude_) 
+PointST::PointST(double latitude_, double longitude_)
   : latitude(latitude_), longitude(longitude_)
 {
 }
@@ -34,9 +34,9 @@ double distance(PointST const& a, PointST const& b) {
 
 // Écrit en degrés.
 std::ostream& operator << (std::ostream& os, const PointST& point) {
-  os << "(" 
+  os << "("
      << (point.latitude * 180.0 / PI)
-     << "," 
+     << ","
      << (point.longitude * 180.0 / PI)
      << ")";
   return os;
